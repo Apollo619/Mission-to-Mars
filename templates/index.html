@@ -10,17 +10,17 @@
  <body>
  <div class="container-fluid">
     <!-- Add Jumbotron to Header -->
-    <div class="jumbotron text-center text-light bg-dark">
-      <h1><em class="text-danger">Mission to Mars</em></h1>
+    <div style="background: rgb(255, 148, 148) !important" class="jumbotron">
+      <h1 class="text-center text-black-50"><em>Mission to Mars</em></h1>
       <!-- Add a button to activate scraping script -->
-      <p><a class="btn btn-info btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+      <p class="text-center"><a class="btn btn-info btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
     <!-- Add section for Mars News -->
     <div class="row" id="mars-news">
       <div class="col-md-12">
         <div class="media">
           <div class="media-body">
-            <h2><em>Latest Mars News</em></h2>
+            <h2><u><em>Latest Mars News:</em></u></h2>
             <h4 class="media-heading">{{ mars.news_title }}</h4>
             <p class="text-justify">{{ mars.news_paragraph }}</p>
           </div>
@@ -38,15 +38,15 @@
       <div class="col-md-4">
         <!-- Mars Facts -->
         <div class="row" id="mars-facts">
-          <h4 class="text-justify">Mars Facts</h4>
-          {{ mars.facts | safe }}
+          <h4 class="text-justify"><u>Mars Facts:</u></h4>
+          <table class="table table-striped">{{ mars.facts | safe }}</table>
         </div>
       </div>
     </div>
     <!-- Section for Mars Hemispheres-->
     <section class="content">
       <div class="row" id="mars-hemispheres">
-        <p><h2 class="text-center bg-dark"><strong class="text-danger">Mars Hemispheres</strong></h2></p>
+        <p><h2 class="text-center"><strong class="text-danger">Mars Hemispheres</strong></h2></p>
       </div>
         {% for hemisphere in mars.mars_hemi %}
           <div class="img col-md-6">
